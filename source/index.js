@@ -16,6 +16,7 @@ const Height = Dimensions.get('window').height;
 const isVertical = Height > Width;
 const Top = isVertical ? (Height - Width)/2.0 * 1.25 : 10;
 const Radius = isVertical ? Width / 10 : Width / 25;
+// const Radius = 20;
 
 export default class GesturePassword extends Component {
     constructor(props) {
@@ -81,7 +82,8 @@ export default class GesturePassword extends Component {
                 <View style={styles.board} {...this._panResponder.panHandlers}>
                     {this.renderCircles()}
                     {this.renderLines()}
-                    <Line ref='line' color={color} />
+                    {/* <Line ref='line' color={color} /> */}
+                    <Line ref='line' color={this.props.normalColor} />
                 </View>
 
                 {this.props.children}
@@ -95,7 +97,8 @@ export default class GesturePassword extends Component {
 
         this.state.circles.forEach(function(c, i) {
             fill = c.isActive;
-            color = status === 'wrong' ? wrongColor : rightColor;
+            // color = status === 'wrong' ? wrongColor : rightColor;
+            color = rightColor;
             inner = !!innerCircle;
             outer = !!outerCircle;
 
@@ -112,7 +115,8 @@ export default class GesturePassword extends Component {
         let { status, wrongColor, rightColor } = this.props;
 
         this.state.lines.forEach(function(l, i) {
-            color = status === 'wrong' ? wrongColor : rightColor;
+            // color = status === 'wrong' ? wrongColor : rightColor;
+            color = rightColor;
 
             array.push(
                 <Line key={'l_' + i} color={color} start={l.start} end={l.end} />
