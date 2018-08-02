@@ -7,11 +7,11 @@ export default class Circle extends Component {
     }
 
     render() {
-        let {color, normalColor, fill, x, y, r, inner, outer} = this.props;
+        let {color, fill, x, y, r, inner, outer} = this.props;
         let r2 = r*2/3;
         return (
             <View style={[styles.outer,
-                        {left: x - r2, top: y - r2, width: 2 * r2, height: 2 * r2, borderRadius: r2}, {borderColor: normalColor},
+                        {left: x - r2, top: y - r2, width: 2 * r2, height: 2 * r2, borderRadius: r2}, {borderColor: color},
                         fill && {borderColor: color,backgroundColor:'rgba(83,126,239,0.1))'},
                         !outer && {borderWidth: 0}]}>
 
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         borderColor: '#8E91A8',
         borderWidth: 1,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     inner: {
         backgroundColor: '#8E91A8'
