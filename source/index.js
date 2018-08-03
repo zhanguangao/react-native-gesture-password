@@ -21,7 +21,7 @@ export default class GesturePassword extends Component {
         super(props);
 
         this.timer = null;
-        this.lastIndex = -1;
+        this.lastIndex = -1;ß
         this.sequence = '';   // 手势结果
         this.isMoving = false;
 
@@ -304,7 +304,7 @@ const styles = StyleSheet.create({
         width: Width,
     },
     message: {
-        marginHorizontal: 15,
+        paddingHorizontal: 15,
         alignItems: 'center',
         // top:MarginTop/2,
         position:'absolute',
