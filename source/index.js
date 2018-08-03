@@ -170,7 +170,7 @@ export default class GesturePassword extends Component {
     onStart(e, g) {
         let x = e.nativeEvent.pageX ;
         let y = e.nativeEvent.pageY;
-        console.log('onStart',x,y)
+        // console.log('onStart',x,y)
 
         let lastChar = this.getTouchChar({x, y});
         if ( lastChar ) {
@@ -198,7 +198,7 @@ export default class GesturePassword extends Component {
     onMove(e, g) {
         let x = e.nativeEvent.pageX ;
         let y = e.nativeEvent.pageY;
-        console.log('onMove',x,y)
+        // console.log('onMove',x,y)
 
         if ( this.isMoving ) {
             this.refs.line.setNativeProps({end: {x, y}});
